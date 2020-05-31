@@ -45,7 +45,6 @@ public class DressPicker : MonoBehaviour
     int hairIndex = 0;
     int bottomIndex = 0;
     int topIndex = 0;
-
     private void Start()
     {
         //Pick default
@@ -54,7 +53,6 @@ public class DressPicker : MonoBehaviour
         SwitchTop(0);
         SwitchBottom(0);
     }
-
     public void SwitchHair(int value)
     {
         hairIndex += value;
@@ -70,7 +68,6 @@ public class DressPicker : MonoBehaviour
         hairImage.sprite = currentDress.Hair;
         ValidateDress();
     }
-
     public void SwitchBase(int value)
     {
         if(value >= bases.Count)
@@ -85,7 +82,6 @@ public class DressPicker : MonoBehaviour
         baseImage.sprite = currentDress.Base;
         ValidateDress();
     }
-
     public void SwitchTop(int value)
     {
         topIndex += value;
@@ -101,7 +97,6 @@ public class DressPicker : MonoBehaviour
         topsImage.sprite = currentDress.Top;
         ValidateDress();
     }
-
     public void SwitchBottom(int value)
     {
         bottomIndex += value;
@@ -117,8 +112,6 @@ public class DressPicker : MonoBehaviour
         bottomImage.sprite = currentDress.Bottom;
         ValidateDress();
     }
-
-
     void ValidateDress()
     {
         bool result = CheckDresses();
@@ -133,7 +126,6 @@ public class DressPicker : MonoBehaviour
             incorrectText.enabled = true;
         }
     }
-
     bool CheckDresses()
     {   
         foreach (Dress dress in correctCombinations)
@@ -149,7 +141,6 @@ public class DressPicker : MonoBehaviour
             if (currentDress.Hair != dress.Hair) correct = false;
             if (currentDress.Top != dress.Top) correct = false;
             if (currentDress.Bottom != dress.Bottom) correct = false;
-
             if (correct)
             {
                 return true;
